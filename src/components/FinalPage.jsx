@@ -24,10 +24,15 @@ function FinalPage() {
     try{
       setLoading(true)
      
-      const res = await axios.post("https://vivid-backend2-2.onrender.com/ask" ,{
-        statement:ques,
-        id:video.id
-      })
+     const res = await axios.post("https://vivid-backend2-2.onrender.com/ask", {
+    statement: ques,
+    id: video.id
+  }, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: false, // Ensure credentials nahi bhej rahe agar nahi chahiye
+  });
       setAns(res.data.answer)
       setQuery(false)
       setLoading(false)
