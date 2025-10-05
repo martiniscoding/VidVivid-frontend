@@ -24,7 +24,7 @@ function FinalPage() {
     try{
       setLoading(true)
      
-     const res = await axios.post("https://vivid-backend2-2.onrender.com/ask", {
+     const res = await axios.post("https://vidvividback.onrender.com/ask", {
     statement: ques,
     id: video.id
   }, {
